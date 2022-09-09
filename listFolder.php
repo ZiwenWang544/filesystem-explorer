@@ -63,11 +63,8 @@ if(isset($_GET["name"])){
                  while(false !== ($entry = readdir($doc))){
                         if($entry!= "." && $entry!=".."){
                          
-                           
                                 echo "<li><strong>$entry</strong></li>";
-                                
-                            
-                            
+                             
                         }
                   
              }
