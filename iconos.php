@@ -1,6 +1,6 @@
 <?php
 
-function $Imagens($archivos){
+function Imagens($archivos){
     $Doc ="<img src='../path/doc.png alt=' '> ";
     $Csv ="<img src='../path/csv.png alt=' '> ";
     $Exe ="<img src='../path/exe.png alt=' '> ";
@@ -15,6 +15,8 @@ function $Imagens($archivos){
     $Svg ="<img src='../path/svg.png alt=' '> ";
     $Txt ="<img src='../path/txt.png alt=' '> ";
     $Zip ="<img src='../path/zip.png alt=' '> ";
+
+    $SWITCHImages = pathinfo($archivos,PATHINFO_EXTENSION );
 
     switch($SWITCHImages){
         case 'doc'; echo $Doc; break;
@@ -32,7 +34,6 @@ function $Imagens($archivos){
         case 'txt'; echo $Txt; break;
         case 'zip'; echo $Zip; break;
     }
-    $SWITCHImages = pathinfo($archivos,PATHINFO_EXTENSION );
  
 }
 ?>
