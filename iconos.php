@@ -16,8 +16,6 @@ function $Imagens($archivos){
     $Txt ="<img src='../path/txt.png alt=' '> ";
     $Zip ="<img src='../path/zip.png alt=' '> ";
 
-    $SWITCHImages = pathinfo($archivos,PATHINFO_EXTENSION );
-
     switch($SWITCHImages){
         case 'doc'; echo $Doc; break;
         case 'csv'; echo $Csv; break;
@@ -34,6 +32,7 @@ function $Imagens($archivos){
         case 'txt'; echo $Txt; break;
         case 'zip'; echo $Zip; break;
     }
-
+    $SWITCHImages = pathinfo($archivos,PATHINFO_EXTENSION );
+ 
 }
 ?>
