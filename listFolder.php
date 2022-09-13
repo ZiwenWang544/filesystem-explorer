@@ -39,7 +39,7 @@ function printFolders($a){
                             $path=$a."/".$entry;
                          
                             if(is_dir($path)){
-                                echo "<li><a href='listFolder.php?name=$path'> $entry </a></li>";//Cambiar el href para situar la carpeta
+                                echo "<li><a href='listFolder.php?name=$path' target='_blank'> $entry </a></li>";//Cambiar el href para situar la carpeta
                                 printFolders($path);
                             }
                             
@@ -110,7 +110,7 @@ if(isset($_GET["name"])){
                             
 
                     }else{
-                        echo "<li><a href='$path'> $entry </a></li>";//Cambiar el href para situar la carpeta
+                        echo "<li><a href='$path' target='_blank'> $entry </a></li>";//Cambiar el href para situar la carpeta
 
                             Imagens($path);
 

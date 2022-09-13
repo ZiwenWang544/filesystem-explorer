@@ -11,7 +11,11 @@ function searchbarr($a,$path){
                 $c=$path."/".$entry;
                 $info = pathinfo($c);
                 if(stripos($info["filename"], $a) !== false ){
-                    echo "<li><a href='listFolder.php?name=$c'> $entry</a></li>";         
+                    if(is_dir($c)){
+                        echo "<li><a href='index.php?name=$c'> $entry</a></li>";
+                    }else{
+                        echo "<li><a href='$c' target='_blank'> $entry </a></li>";
+                    }
                 }
                 if(is_dir($c)){
                     searchbarr($a,$c);
