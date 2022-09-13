@@ -42,10 +42,9 @@
           <a class="nav-link disabled">Guest</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <form method="get" action="<?php echo $_SERVER["PHP_SELF"]?>">  
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit" name="ListFolder">Search</button>
+      <form class="d-flex" role="search" method="get" action="search.php">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search"> 
+        <input class="btn btn-outline-success" type="submit" name="submit" value="submit1">
       </form>
     </div>
   </div>
@@ -54,7 +53,7 @@
 <ul class="nav flex-column">
   <li class="nav-item">
   <?php
-            require("listFolder.php");
+            require_once("listFolder.php");
                 ?>
   </li>
 </ul>
