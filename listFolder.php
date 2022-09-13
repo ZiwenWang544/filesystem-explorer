@@ -1,6 +1,7 @@
 <?php
 //REVISAR LOS UL Y LOS LI PARA QUE SE ADAPTEN LUEGO AL BOOTSTRAP Y/O DISEÑO
-
+include_once("iconos.php");
+include_once("crud.php");
 // PRINT ALL DIRECTORIES SELECT
 function printSelectionFolders($a){
     if(is_dir($a)){
@@ -55,16 +56,67 @@ printFolders('./roots');
 
 
 
+function formatSizeUnits($bytes)
+{
+    if ($bytes >= 1073741824)
+    {
+        $bytes = number_format($bytes / 1073741824, 2) . ' GB';
+    }
+    elseif ($bytes >= 1048576)
+    {
+        $bytes = number_format($bytes / 1048576, 2) . ' MB';
+    }
+    elseif ($bytes >= 1024)
+    {
+        $bytes = number_format($bytes / 1024, 2) . ' KB';
+    }
+    elseif ($bytes > 1)
+    {
+        $bytes = $bytes . ' bytes';
+    }
+    elseif ($bytes == 1)
+    {
+        $bytes = $bytes . ' byte';
+    }
+    else
+    {
+        $bytes = '0 bytes';
+    }
+
+    return $bytes;
+}
+
+function getInfo($a){//Información necesaria que te piden de los directorios y archivos
+
+echo date("F d Y H:i:s.", filemtime($a));//last modification
+echo date("F d Y H:i:s.", filectime($a));//creation day
+echo formatSizeUnits(filesize($a));
+}
+
 if(isset($_GET["name"])){
-    $folder= htmlspecialchars($_GET["name"]);
+    $folder= $_GET["name"];
+    
     if(is_dir($folder)){
         $doc=opendir($folder);
                 echo "<ul>";
                  while(false !== ($entry = readdir($doc))){
                         if($entry!= "." && $entry!=".."){
-                         
-                                echo "<li><strong>$entry</strong></li>";
-                             
+                         $path=$folder."/".$entry;
+                         if(is_dir($path)){
+
+                            echo "<li><a href='listFolder.php?name=$path'> $entry </a></li>";//Cambiar el href para situar la carpeta
+                            echo "<li><a href='listFolder.php?remove=$path'> Eliminar $entry </a></li>";
+                            getInfo($path);
+                            
+
+                    }else{
+                        echo "<li><a href='$path'> $entry </a></li>";//Cambiar el href para situar la carpeta
+
+                            Imagens($path);
+
+                         }
+
+
                         }
                   
              }
