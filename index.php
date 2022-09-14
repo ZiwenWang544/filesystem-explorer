@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link rel="stylesheet" src="sidebars.css" >
+    <link rel="stylesheet" type="text/css" src="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" src="style.css">
- 
+    
+
   </head>
   <body>
 
@@ -77,19 +78,7 @@
   </div>
 </div>
 
-    <container class="container-xl d-flex justify-content-between">
-
-<<<<<<< HEAD
-        <div class="col-2"><?php if(isset($path)){ getInfo($path); }?></div>
-=======
-        <div class="col-3"><?php printFolders('./roots');?></div>
-        <div class="col-9">
-          <?php if(isset($_GET["name"])){actionList();}?>
-        </div>
-        
->>>>>>> 91dc7d8dc1b6667bfd649d6f696ec9d4050d03b6
-
-    </container>
+  
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>

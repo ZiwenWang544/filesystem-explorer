@@ -1,14 +1,14 @@
+< link rel=stylesheet href=<style class="style.css"></style>>
+
+
 <?php
 
-
-
-
 function Imagens($archivos){
-    $Doc ="<img src='./path/doc.png' alt=' '> ";
+    $Doc ="<img src='./path/doc.png' alt=' '>  ";
     $Csv ="<img src='./path/csv.png' alt=' '> ";
     $Exe ="<img src='./path/exe.png' alt=' '> ";
     $Jpg ="<img src='./path/jpg.png' alt=' '> ";
-    $Mp3 ="<img src='./path/mp3.png' alt=' '> ";
+    $Mp3 ="<img src='./path/mmp3.png' alt=' '> ";
     $Mp4 ="<img src='./path/mp4.png' alt=' '> ";
     $Odt ="<img src='./path/odt.png' alt=' '> ";
     $Pdf ="<img src='./path/pdf.png' alt=' '> ";
@@ -16,7 +16,7 @@ function Imagens($archivos){
     $Ppt ="<img src='./path/ppt.png' alt=' '> ";
     $Rar ="<img src='./path/rar.png' alt=' '> ";
     $Svg ="<img src='./path/svg.png' alt=' '> ";
-    $Txt ="<img src='./path/txt.png' alt=' '> ";
+    $Txt ="<img src='./path/ttxt.png' alt=' '> ";
     $Zip ="<img src='./path/zip.png' alt=' '> ";
 
     $switchimages = pathinfo($archivos,PATHINFO_EXTENSION);
