@@ -38,7 +38,7 @@ if(isset($_POST["creation"])){
     }
 
    }else{
-    echo "Archivo ya existe";
+    echo "Archivo no es una carpeta";
    }
 }
 //ELIMINAR ARCHIVO
@@ -113,7 +113,7 @@ if(isset($_POST["rename"])){
         <label for="">Nombre carpeta</label>
         <input type="text" name="directoryCreate">
         <label for="">Seleccione Carpeta donde almacenar</label>
-            <select name="pathEdit">
+            <select name="fileCreation">
                 <?php printSelectionFolders('./roots'); ?>
             </select>
         <input type="submit" value="Crear carpeta" name ="creation">

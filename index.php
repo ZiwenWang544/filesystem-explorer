@@ -77,10 +77,17 @@
   </div>
 </div>
 
-
     <container class="container-xl d-flex justify-content-between">
 
+<<<<<<< HEAD
         <div class="col-2"><?php if(isset($path)){ getInfo($path); }?></div>
+=======
+        <div class="col-3"><?php printFolders('./roots');?></div>
+        <div class="col-9">
+          <?php if(isset($_GET["name"])){actionList();}?>
+        </div>
+        
+>>>>>>> 91dc7d8dc1b6667bfd649d6f696ec9d4050d03b6
 
     </container>
 

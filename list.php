@@ -85,11 +85,14 @@ function formatSizeUnits($bytes)
     return $bytes;
 }
 
-function getInfo($a){//Información necesaria que te piden de los directorios y archivos
-
-echo date("F d Y H:i:s.", filemtime($a));//last modification
-echo date("F d Y H:i:s.", filectime($a));//creation day
+function getInfoSize($a){
 echo formatSizeUnits(filesize($a));
+}
+function getInfoModification($a){
+echo date("F d Y H:i:s.", filemtime($a));//last modification
+}
+function getInfoCreation($a){
+echo date("F d Y H:i:s.", filectime($a));//creation day
 }
 function actionList(){
     $folder= $_GET["name"];
@@ -101,15 +104,31 @@ function actionList(){
                         if($entry!= "." && $entry!=".."){
                          $path=$folder."/".$entry;
                          if(is_dir($path)){
+                                            ?>
+                            <div class="row">
+                                <div class="col"><a href='index.php?name= <?php echo $path?>'> <?php echo $entry?> </a></div>
+                                <div class="col"><?php getInfoSize($path)?></div>
+                                <div class="col"><?php getInfoModification($path)?></div>
+                                <div class="col"><?php getInfoCreation($path)?></div>
+                                <div class="col"><a href='index.php?remove= <?php echo $path?>'>Eliminar  </a></div>
 
                             echo "<li><a href='index.php?name=$path'> $entry </a></li>";//Cambiar el href para situar la carpeta
                             echo "<li><a href='index.php?remove=$path'> Eliminar $entry </a></li>";
                             
 
                     } else{
-                        echo "<li><a href='$path' target='_blank'> $entry </a></li>"; //Cambiar el href para situar la carpeta
+                        ?>
+                       
+                        <div class="row">
+                                <div class="col"><a href='<?php echo $path?>' target='_blank'> <?php echo $entry?> </a></div>
+                                <div class="col"><?php getInfoSize($path)?></div>
+                                <div class="col"><?php getInfoModification($path)?></div>
+                                <div class="col"><?php getInfoCreation($path)?></div>
+                                <div class="col"></div>
+                            </div>
+                            <?php
 
-                            Imagens($path);
+
 
                          }
 
