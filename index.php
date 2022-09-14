@@ -59,13 +59,13 @@
 
 
 
-
     <container class="container-xl d-flex justify-content-between">
         
 
-        <div class="col-4"><?php printFolders('./roots');?></div>
-        <div class="col-6"><?php if(isset($_GET["name"])){actionList();}?></div>
-        <div class="col-2"><?php if(isset($path)){ getInfo($path); }?></div>
+        <div class="col-3"><?php printFolders('./roots');?></div>
+        <div class="col-9">
+          <?php if(isset($_GET["name"])){actionList();}?>
+        </div>
         
 
     </container>
