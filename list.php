@@ -105,7 +105,6 @@ function actionList(){
                             echo "<li><a href='index.php?name=$path'> $entry </a></li>";//Cambiar el href para situar la carpeta
                             echo "<li><a href='index.php?remove=$path'> Eliminar $entry </a></li>";
                             
-                            
 
                     } else{
                         echo "<li><a href='$path' target='_blank'> $entry </a></li>"; //Cambiar el href para situar la carpeta
@@ -116,7 +115,6 @@ function actionList(){
 
 
                         }
-                  
              }
              closedir($doc);
              echo "</ul>";
