@@ -1,4 +1,4 @@
-
+<?php require_once('list.php');?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,8 +7,8 @@
     <title>Bootstrap demo</title>
     <link rel="stylesheet" src="sidebars.css" >
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    
-    
+    <link rel="stylesheet" src="style.css">
+ 
   </head>
   <body>
 
@@ -46,30 +46,30 @@
       </ul>
       <form class="d-flex" role="search" method="get" action="search.php">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search"> 
-        <input class="btn btn-outline-success" type="submit" name="submit" value="submit1">
+        <input class="btn btn-outline-success" type="submit" name="submit" value="search">
       </form>
     </div>
   </div>
+  <div class="d-flex">
+<ul class="nav flex-column">
+  <li class="nav-item">
+  </li>
+</ul>
+
 </nav>
 
 
 
-    <div class="container-xl">
-      
-        <div class="d-flex jsutify-content-between">
-        <div class="text-start"><h5>cosas1</h5></div>
-        <div class="text-center"><h5>cosas2</h5></div>
-        <div class="text-end"><h5>cosas3</h5> </div>
-        </div>
-        <div class="list-group">
-            <div>
-           
 
-        </div>
-    </div>
+    <container class="container-xl d-flex justify-content-between">
+        
 
-</div>
+        <div class="col-4"><?php printFolders('./roots');?></div>
+        <div class="col-6"><?php if(isset($_GET["name"])){actionList();}?></div>
+        <div class="col-2"><?php if(isset($path)){ getInfo($path); }?></div>
+        
 
+    </container>
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
