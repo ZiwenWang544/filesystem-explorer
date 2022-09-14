@@ -110,7 +110,7 @@ if(isset($_GET["name"])){
                             
 
                     }else{
-                        echo "<li><a href='$path'> $entry </a></li>";//Cambiar el href para situar la carpeta
+                        echo "<li><a href='$path' target='_blank' > $entry </a></li>";//Cambiar el href para situar la carpeta
 
                             Imagens($path);
 
