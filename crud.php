@@ -1,6 +1,6 @@
 <?php 
 //UPLOAD FILE
-include_once('listFolder.php');
+include_once('list.php');
 $formats =array('jpg','doc','csv','png','txt','ppt','odt','pdf','zip','rar','exe','svg','mp3','mp4');
 
 if(isset($_POST['button'])){

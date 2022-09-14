@@ -1,7 +1,7 @@
 <?php
 //REVISAR LOS UL Y LOS LI PARA QUE SE ADAPTEN LUEGO AL BOOTSTRAP Y/O DISEÑO
 include_once("iconos.php");
-include_once("crud.php");
+
 // PRINT ALL DIRECTORIES SELECT
 function printSelectionFolders($a){
     if(is_dir($a)){
@@ -39,7 +39,7 @@ function printFolders($a){
                             $path=$a."/".$entry;
                          
                             if(is_dir($path)){
-                                echo "<li><a href='listFolder.php?name=$path'> $entry </a></li>";//Cambiar el href para situar la carpeta
+                                echo "<li><a href='index.php?name=$path' > $entry </a></li>";//Cambiar el href para situar la carpeta
                                 printFolders($path);
                             }
                             
@@ -52,7 +52,6 @@ function printFolders($a){
    
 }
 
-printFolders('./roots');
 
 
 
@@ -92,8 +91,7 @@ echo date("F d Y H:i:s.", filemtime($a));//last modification
 echo date("F d Y H:i:s.", filectime($a));//creation day
 echo formatSizeUnits(filesize($a));
 }
-
-if(isset($_GET["name"])){
+function actionList(){
     $folder= $_GET["name"];
     
     if(is_dir($folder)){
@@ -104,13 +102,13 @@ if(isset($_GET["name"])){
                          $path=$folder."/".$entry;
                          if(is_dir($path)){
 
-                            echo "<li><a href='listFolder.php?name=$path'> $entry </a></li>";//Cambiar el href para situar la carpeta
-                            echo "<li><a href='listFolder.php?remove=$path'> Eliminar $entry </a></li>";
-                            getInfo($path);
+                            echo "<li><a href='index.php?name=$path'> $entry </a></li>";//Cambiar el href para situar la carpeta
+                            echo "<li><a href='index.php?remove=$path'> Eliminar $entry </a></li>";
+                            
                             
 
-                    }else{
-                        echo "<li><a href='$path' target='_blank' > $entry </a></li>";//Cambiar el href para situar la carpeta
+                    } else{
+                        echo "<li><a href='$path' target='_blank'> $entry </a></li>"; //Cambiar el href para situar la carpeta
 
                             Imagens($path);
 
@@ -124,12 +122,6 @@ if(isset($_GET["name"])){
              echo "</ul>";
     }
 }
+
+
 ?>
-
-
-
-
-
-
-
-
