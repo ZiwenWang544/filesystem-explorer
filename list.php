@@ -120,7 +120,7 @@ function actionList(){
                         ?>
                        
                         <div class="row">
-                                <div class="col"><a href='<?php echo $path?>' target='_blank'> <?php echo $entry?> </a></div>
+                                <div class="col"><a href='<?php echo $path?>' target='_blank'> <?php Imagens($path)?></a></div>
                                 <div class="col"><?php getInfoSize($path)?></div>
                                 <div class="col"><?php getInfoModification($path)?></div>
                                 <div class="col"><?php getInfoCreation($path)?></div>

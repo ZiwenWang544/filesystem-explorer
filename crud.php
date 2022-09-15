@@ -37,6 +37,7 @@ if(isset($_POST["creation"])){
         echo "ha ocurrido un error al crear  el directorio";
     }
 
+
    }else{
     echo "Archivo no es una carpeta";
    }
