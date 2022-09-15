@@ -1,6 +1,7 @@
 <?php
 //REVISAR LOS UL Y LOS LI PARA QUE SE ADAPTEN LUEGO AL BOOTSTRAP Y/O DISEÑO
 include_once("iconos.php");
+require_once('crud.php');
 
 // PRINT ALL DIRECTORIES SELECT
 function printSelectionFolders($a){
@@ -112,10 +113,9 @@ function actionList(){
                                 <div class="col"><?php getInfoCreation($path)?></div>
                                 <div class="col"><a href='index.php?remove= <?php echo $path?>'>Eliminar  </a></div>
 
-                            echo "<li><a href='index.php?name=$path'> $entry </a></li>";//Cambiar el href para situar la carpeta
-                            echo "<li><a href='index.php?remove=$path'> Eliminar $entry </a></li>";
+                           
                             
-
+<?php
                     } else{
                         ?>
                        

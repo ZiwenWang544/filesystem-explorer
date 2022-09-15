@@ -43,6 +43,7 @@ if(isset($_POST["creation"])){
 }
 //ELIMINAR ARCHIVO
 function removeDir($a){
+    echo $a;
 foreach(glob($a."/*")as $element){
     if(is_dir($element)){
 
@@ -57,14 +58,19 @@ if(isset($_GET["remove"])){
    
     $pathDelete=$_GET["remove"];
    
-    echo $pathDelete;
-    if(is_dir($pathDelete)){
+   
+    // if(is_dir($pathDelete)){
         removeDir($pathDelete);
         echo "eliminado correctamente";
-    }else {
-        echo "error al crear";
-    }
+    // }else {
+        echo "error al borrar";
+    // }
 }
+
+
+
+
+
 //RENAME ARCHIVO
 if(isset($_POST["rename"])){
     $directory=$_POST['directoryEdit'];
@@ -98,26 +104,6 @@ if(isset($_POST["rename"])){
     <title>UploadFiles</title>
 </head>
 <body>
-    <h1>SUBIR ARCHIVO</h1>
-    <form action="./crud.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="file">
-        <label for="">Nombre Carpeta</label>
-            <select name="fileDestination">
-                <?php printSelectionFolders('./roots'); ?>
-            </select>
-        <input type="submit" value="Upload file" name ="button">
-    </form>
-    <h1>CREAR ARCHIVO</h1>
-
-    <form action="./crud.php" method="post" >
-        <label for="">Nombre carpeta</label>
-        <input type="text" name="directoryCreate">
-        <label for="">Seleccione Carpeta donde almacenar</label>
-            <select name="fileCreation">
-                <?php printSelectionFolders('./roots'); ?>
-            </select>
-        <input type="submit" value="Crear carpeta" name ="creation">
-    </form>
 
     <h1>ELIMINAR ARCHIVO</h1>
 

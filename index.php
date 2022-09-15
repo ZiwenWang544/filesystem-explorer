@@ -1,4 +1,6 @@
-<?php require_once('list.php');?>
+<?php require_once('list.php');
+require_once('crud.php')
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,14 +23,31 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-        <form class="d-flex" role="Create">
-      <input class="form-control me-2" type="create" placeholder="Create" aria-label="Create">
-      <button class="btn btn-outline-success" type="submit">Create</button>
+
+
+
+        <form action="./index.php" class="d-flex" role="Create" method="post">
+      <input class="form-control me-2" type="create" placeholder="Create" aria-label="Create" name="directoryCreate">
+      <select name="fileCreation">
+                <?php printSelectionFolders('./roots'); ?>
+            </select>
+      <input class="btn btn-outline-success" type="submit" name="creation">
     </form>
+    </li>
+
+    <li class="nav-item">
+    <form action="./index.php" class="d-flex" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+
+      <select name="fileDestination">
+                <?php printSelectionFolders('./roots'); ?>
+            </select>
+      <input class="btn btn-outline-success" type="submit"  name ="button">
+    </form>
+
+
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Delete</a>
-        </li>
+      
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Menu
@@ -77,19 +96,6 @@
   </div>
 </div>
 
-    <container class="container-xl d-flex justify-content-between">
-
-<<<<<<< HEAD
-        <div class="col-2"><?php if(isset($path)){ getInfo($path); }?></div>
-=======
-        <div class="col-3"><?php printFolders('./roots');?></div>
-        <div class="col-9">
-          <?php if(isset($_GET["name"])){actionList();}?>
-        </div>
-        
->>>>>>> 91dc7d8dc1b6667bfd649d6f696ec9d4050d03b6
-
-    </container>
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
